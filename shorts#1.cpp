@@ -1,3 +1,18 @@
+/*
+PROBLEM
+
+Print This Pattern
+
+ *
+ * *
+ * * *
+ * * * *
+ * * * * * 
+*/
+
+
+// CODE
+
 #include <iostream>
 using namespace std;
 
