@@ -1,0 +1,42 @@
+// MOST EFFICIENT PRIME NUMBER PRINTING ALGORITHM
+// USING SIEVE OF ERATOSTHENIS
+
+#include <bits/stdc++.h>
+using namespace std;
+
+void print_prime(int n)
+{
+    if (n < 2)
+        cout << "No prime numbers";
+
+    bool prime[n + 1];
+    memset(prime, true, sizeof(prime));
+
+    for (int p = 2; p * p <= n; p++)
+    {
+        if (prime[p])
+        {
+            for (int k = p * p; k <= n; k += p)
+            {
+                prime[k] = false;
+            }
+        }
+    }
+
+    // printing
+    for (int i = 2; i <= n; i++)
+    {
+        if (prime[i])
+            cout << i << "      ";
+    }
+    cout << endl;
+}
+
+int main()
+{
+    int x;
+    cout << " Enter Range : ";
+    cin >> x;
+    print_prime(x);
+    return 0;
+}
